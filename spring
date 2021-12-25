@@ -1,0 +1,53 @@
+spring
+
+URI(Uniform Resource Identifier) can represent both URL and URN(Uniform Resource number) of a resource simultaneously
+    is a string identifier that refers to a resource on the internet.
+	It is a string of characters that is used to identify any resource on the internet using location, name, or both.
+    A URI has two subsets; URL (Uniform Resource Locator) and URN (Uniform Resource Number). If it contains only a name, it means it is not a URL. 
+	Instead of directly URI, we mostly see the URL and URN in the real world.
+    A URI contains scheme, authority, path, query, and a fragment. 
+	Some most common URI schemes are HTTP, HTTPs, ftp, Idap, telnet, etc.
+    syntax:-
+	scheme:[//authority]path[?query][#fragment] 
+	https:
+URL(Uniform Resource locator) can only specify the address of the resource on the internet
+     is used to find the location of the resource on the web. 
+	 It is a reference for a resource and a way to access that resource. 
+	 A URL always shows a unique resource, and it can be an HTML page, a CSS document, an image, etc.
+     A URL uses a protocol for accessing the resource, which can be HTTP, HTTPS, FTP, etc.
+All URLs can be URIs, but all URIs cannot be URLs. 
+It is because a URI contains both URL and URN and represent URL or URN, or both.     
+
+Spring MVC and Java-Based Configuration
+
+Please note that here, we will use three different annotations at the top level. They will serve the purpose of the XML-based tags used earlier. 
+__________________________________________________________________________________________________________________________________________________
+XML Tag	                  |   Annotation	 |             Description
+<context:component-scan/> | @ComponentScan() |  Scan starts from base package and registers all controllers, repositories, service, beans, etc.
+<mvc:annotation-driven/>  | @EnableWebMvc	 |  Enable Spring MVC-specific annotations like @Controller
+Spring config file	      | @Configuration	 |  Treat as the configuration file for Spring MVC-enabled applications.
+
+
+@CrossOrigin("*") - All URLs can be URIs, but all URIs cannot be URLs. 
+               It is because a URI contains both URL and URN and represent URL or URN, or both.
+@ResponseBody - java object to json
+@RequestBody - json to java object
+@ExceptionHandler - Exceptions thrown by a Controller method is mapped to the ControllerAdvice method
+@RequestParam - (@RequestMapping(value = "/tutorials/bookmark"))
+                It is used to get the request parameters. @RequestParam automatically binds the request parameters to the arguments of your handler method. 
+                It also provides auto type conversion for some standard type like int, long, float, string, date etc.
+@PathVariable - (@RequestMapping(value = "/tutorials/bookmark/{siteId}"))
+                It is used to pass parameter along with the url, sometimes we need to pass parameters along with the url to get the data. 
+                Spring MVC provides support for customizing the URL in order to get data. 
+                To achieving this purpose @PathVariable annotation is used in Spring mvc framework.				
+@ControllerAdvice -  It allows you to handle exceptions across the whole application, not just to an individual controller. 
+                     You can think of it as an interceptor of exceptions thrown by methods annotated with @RequestMapping or one of the shortcuts.				
+				
+				
+				
+				
+				
+				
+				
+				
+				

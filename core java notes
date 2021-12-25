@@ -1,0 +1,689 @@
+JAVA
+
+robust - has automatic garbage collection
+secure - has access specifier
+developer - James Gosling, Mike Sheridan, Patrick Naughton
+S/W - spring tool suite
+      maven 3.9
+      apache tomcat
+
+JDK contains JRE contains JVM
+JRE and API(library)
+byte code run in JVM
+introducted by sun microsystems in 1991(18month to 1st version)
+Oak was renamed to java in 1995
+
+JVM
+COMPILER           INTERPRETER
+
+checks the        platform independent.
+syntax.  
+
+converts to       converts to 
+machine code.     bytecode.
+
+faster.           independent.
+
+
+JVM executes bytecode.
+JIT bytecode to native machine code.
+JRE run java application.(JVM API)
+JDK to develop and run java prog
+
+standard edition - application
+micro edition - for mobile and embedded
+enterprise edition - web application
+
+JCL > java class library(standard API(library))
+java EE was created to extend java SE
+
+datatype -attributes assigned to specific variable (tells the compiler how the programmer aims to use the data )
+
+statically typed language - defined during compile time.
+dynamically typed language - datatype is changed with respect to time
+
+2 - TYPES
+primitive datatype - predefined
+non primitive datatype - user defined
+
+VARIABLE
+is a kind of CONTAINER that contains value during prog executes.
+
+3-TYPES
+local variable - declared inside method(don't supports default value)
+static variable - declared with "static" inside class or inside static method - created when class loader is executed
+instance variable - declared inside class - created when object is created 
+
+default value - int,short,byte,long > 0
+                referance  > null
+				double > 0.0
+				float > 0.0f
+				char > \u0000
+				boolean > false
+& - bitwise AND
+| - bitwise OR
+^ - exclusive OR (XOR)(if i/n is diff output will be 1)
+<< - left shift (removes on left and add zeros on right)
+>> - right shift (removes on right and add zeros on left)
+>>> - zero fill right shift
+
+unary - x++,++x
+binary - x+y
+ternary - x=x<y?y:x;
+relational - !=,>,<,>=
+logical - &&,||,!
+assignment _ =,+=,-=
+bitwise - &,|,^,~,<<,>>>
+conditional - a<b 				
+				
+object - instance of class, have states and behaviour
+class - a user defined blueprint or prototype from which objects are created				
+
+INHERITANCE
+constructor - first line should contain either super() or this()
+their will be no default constructor if we write a constructor.
+
+upcasting - parentclassname parent_refvar = new childclassname();				
+downcasting - childclassname child_refvar = (childclassname) parent_refvar;				
+
+private and final method cann't be overridden
+
+VISIBILITY PUBLIC > PROTECTED > DEFAULT > PRIVATE
+while overridding protected can be changed to public but not to default				
+
+ACCESS MODIFIERS
+package  A
+class A1{	
+private a;   
+public b;
+protected c;
+default d;}
+      
+class B ex A1{
+can access b,c,d
+}      
+
+package B
+class c{
+can access b 
+}
+ package C 
+ class c ex A1{
+ cn access b,c
+ }
+
+STATIC
+loaded by classloader
+SV cann't used inside constructor
+SV cann't be declare but can access inside non static method
+SM cann't access non static variable
+SM can be overloaded, cann't be overridden
+SM can be access outside class using classname
+static final variable - (uppercase to seperate two words use _)
+
+FINAL
+FV can be declare in constructor or while defining
+FC - to prevent inheritance
+FM - to prevent overriding
+
+keyword - reserved words, token in java(native,volatile,transient,synchronized,instance of)
+instance of - if(leader instanceof Leader)condition is true{} leader is instance(object) of Leader
+
+ENCAPSULATION
+get,set method should be public.
+get,set method name should contain uppercase after get/set ex:getOrder().
+
+toString(){
+}
+System.out.print(object);
+
+INTERFACE
+fully abstract class, introduced to acheive multiple inheritance
+contains only public abstract method
+              public static final variable
+don't have constructor
+object cann't be created
+
+interface extends interface
+class implements interface
+
+ABSTRACT
+can have concrete and abstract method
+can be extended
+object cann't be created
+can create constructor but no use it
+
+COUPLING
+loosely coupled - dependence is less
+tightly coupled - dependence is high
+
+STRING Class
+is a immutable class or object(final class(string is constant))
+we can't change them after creating the object
+
+2 ways to define obj of srting
+1.literal - String name = "linga"; linga is stored in string constant pool
+one obj is created in string pool if their is no duplicate 
+2. by new keyword - String str = new String("linga"); 
+one obj is created in heap if string pool has duplicate
+two obj is created in heap and string pool if string pool has no duplicate
+
+string constant pool(where string are stored) is inside Heap memory(where obj are stored)
+(reusability)
+
+== - checks the reference address (str1)
+.equals() - compare the state of objects "java"
+.equalsIgnoreCase() - same as equals but ignores case
+.compareTo() - obj are equal (compare by ASCII) obj1=obj2 returns 0
+                                             obj1>obj2 returns +ive value
+                                             obj1<obj2 returns -ive value
+StringBuffer(in java1 legacy class) is slower and StringBuilder(non synchronized class in java1.2) are mutable class
+StringBuffer is synchronized - doesn't override the equals() method of Object class 
+              syntax to compare - sb.toString().equals(sbu.toString())
+StringBuilder is non-synchronized
+
+intern()method:
+  String s1=new String("hello");  
+  String s2="hello";  
+  String s3=s1.intern();//returns string from pool, now it will be same as s2  
+  System.out.println(s1==s2);//false because reference variables are pointing to different instance  
+  System.out.println(s2==s3);//true because reference variables are pointing to same instance
+
+equals()
+  object class equals() method is same as ==
+  String class equals() it compares the values
+
+System.currentTimeMillis(); - returns current time of system
+
+hashCode()
+@
+
+LOOP
+for(initialization;condition;increment){}
+while(condition){}
+do{}while(condition);
+
+FOR EACH LOOP
+iterating the collection
+traversing the loop in only one direction
+we cann't do index base search
+for(int a:arr){
+System.out.println(a);
+}
+
+ARRAY
+is a class - collection of similar datatype
+array is static (fixed) in nature
+stores only primitive variables
+
+int arr[]=new arr[]{1,2,2};
+int arr[]={1,2,3};
+int []arr1={1,2,3};
+int arr2[]=new int[7];
+int []arr3=new int[3];
+int arr[][]=new int[2][2];
+int [][]arr=new int [2][2];
+int []arr[]=new int[2][2];
+int []arr[]=new int [2][];- jaged array
+
+4 types
+jaged - rows and column
+anonymous - public void sum(new array[]{1,2,3});(it has no name)
+
+EXCEPTION HANDLING
+Exception : abnormal termination of program(can be handled)
+error : cann't be handled,ex:system crash
+
+Throwable (top most class in exception)
+1.Exception 1.compile time exception(checked exception)ex:FileNotFound,ClassNotFound 
+            2.run timeException(unchecked exception)1.ArrayIndexOutOfBoundsException
+                                                    2.ArithmaticException
+                                                    3.NullPointerException													
+2.Error 1.AssertError
+
+KEYWORDS IN EXCEPTION
+try - to define a part of code may or not give exception
+      can have nested try-catch
+catch(Exception e) - handles exception from try block
+                     multiple catch block should be in order
+finally - used to close all resources
+           System.exit(0); - will terminate the program even finally will terminate
+throws - ExceptionPropagation(act of increasing or spreading)
+         passes the exception to the caller of the method
+        syntax : public void writeMsg() throws Exception{//exception}
+         is used with class name
+		 while overriding throws method the child class method should have throws and the exception class can be same or child of exceptionclass
+throw - custom defined exception(if it is compilationException we can use throwable)
+        is used RuntimeException(must use RuntimeException)
+		it initializes the class while exception, it has a class which extends RuntimeException class
+        		
+e.printStackTrace(); to trace where exception occured, returns name of package , class, method and also exception.
+
+FILE I/O
+input : read the sequence of char or data from the file
+output : write the data into the file
+stream - sequence of char/byte 
+         1.byte stream
+		 2.character stream
+inputStream is an abstract class parentclass of all inputStream class
+outputStream are abstract class	parentclass of all outputStream class	 
+FileOutputStream is not an abstract class (uses byte)
+                 Syntax : File f = new File("myfile.txt");
+				          OutputStream os = new FileOutputStream(f);
+						  String s = "hello";
+						  byte b[] = s.getBytes();
+						  os.write(b);
+		         to add multiple string in one file concat before write() 
+FileInputStream is not an abstract class (uses byte)
+                syntax : InputStream instream = new FileInputStream
+				         int data;
+						 while((instream.read())!=-1){
+						 System.out.println((char)data);
+						 }
+BufferedOutputStream syntax : FileOutputStream fout=new FileOutputStream("D:\\testout.txt");    
+                              BufferedOutputStream bout=new BufferedOutputStream(fout);    
+                              String s="Welcome to javaTpoint.";    
+                              byte b[]=s.getBytes();
+							  bout.write(b);    
+                              bout.flush();
+BufferedInputStream syntax : FileInputStream fin=new FileInputStream("D:\\testout.txt");    
+                             BufferedInputStream bin=new BufferedInputStream(fin);    
+                             int i;    
+                             while((i=bin.read())!=-1){    
+                             System.out.print((char)i);
+FileWriter - char sequence
+             syntax : FileWriter wr = new FileWriter("d:hello.txt");
+			          wr.write("hello this is file writer");
+FileRead - char sequence
+           syntax : FileReader re = new FileReader("hello.txt");
+		            int i;
+					while((i=re.read()!=-1)){
+					System.out.println((char)i);
+					}
+serializable : writing the object into the file
+				should implements Serializable
+				syntax : Employee emp = new Employee("bhawana");
+				         FileOutputStream os = new fileOutputStream("emp.txt");
+                         ObjectOutputStream obj = new ObjectOutputStream(os);				
+                         obj.writeObject(emp);
+						 obj.flush();
+						 obj.close();
+				-need to create the object of class
+                -FileOutputStreamobject where you have to provide the filepath 
+                -ObjectOutputStream object and you have to pass the object of the FileOutputStream in the constructor
+                -writeObject() method of ObjectOutputStream class to	write the object into the file			
+deserializable : reading from the file
+                syntax : InputStream ist = new FileInputStream("emp.txt");
+		                 ObjectInputStream ois = new ObjectInputStream(ist);
+		                 Employee emp = (Employee)ois.readObject(); //downcasting
+		                 System.out.println(emp.name+" "+emp.age+" "+emp.deptName);
+		                 ois.close();
+.flush(); - to clear the internal buffers and force write
+transient keyword - to hide(diplay defaultvalue) the variable in file while diplaying
+serialversionUID - should be static final 
+Externalizable : has two methods readExternal();
+                                 writeExternal();
+CSV - create excel sheet type as CSV delimiter
+      - create Scanner sc =new Scanner(new File("exfile.csv"))
+	  sc.useDelimeter(","); //string seperator
+	  while(sc.hasNext())
+	  {
+	  System.out.ptint(sc.next());
+	  }
+	  
+MULTITHREADING (context switching)context:will maintain state of thread executed
+lightweight and share same memory
+interface Runnable has run()
+Thread implements Runnable
+thread - small unit of a program or process 
+process - a complete program, allocates a separate memory area
+Multithreading  : when multiple thread are working parallel
+2 ways to create multithread
+1.extends Thread class
+   -create refvar for Thread class
+   -call .start(); run() will executes
+2.implements Runnable interface - we cann't call .start();
+  has run() method
+  -create refvar for Runnable interface
+  -create obj for Thread class by passing Runnable refvar in constructor
+  -call .start(); run() will executes
+
+LIFE CYCLE OF THREAD
+1.New - thread creation using new keyword
+2.Runnable - .start()(sheduling,queue,waiting for CPU)
+3.Running - executing
+4.terminate - dead
+
+SYNCHRONIZATION
+-when there multiple thread accessing the same resource we want to ensure that the resource should be used by one thread at one time. 
+For that java provides us synchronization.
+-By using the synchronizartion we can lock the current executing thread object and trying to finish the execution for that object and release the lock for other thread.
+keyword - synchronized
+
+synchronized class lock - synchronized (class_name.class){}          
+1.synchronized method-public synchronized void
+2.synchronized block- synchronized(this){}(synchronized object lock)
+                      lock the particular blk
+					  
+sleep(1000); should handle IE
+wait() - not in runnable it is in waiting mode present (present in obj class not in thread class becoz it belongs to object)
+notify() - calls the thread which is in waiting mode (present in obj class not in thread class becoz it belongs to object)
+notifyAll() - calls all the threads which is in waiting mode (in obj class not in thread class becoz it belongs to object)
+yield() public final static method - to pause current thread and check for thread with high priority
+join() - should handle IE
+syntax:public final void join() throws IE
+      public final void join(long (millisecond)ms) throws IE
+	  public final void join(long ms,int ns) throws IE
+t1.join(); - current thread will wait till t1 thread finishes
+.setPriority(10); or .setPriority(Thread.MAX_PRIORITY);
+
+DeadLock - when one or more threads accessing the same resourse and waiting for each other to release  
+JVM(every thread will have service thread)
+1.main thread - 
+                1.user defined Threads             
+2.Daemon Thread perform tasks such as garbage collection
+                (service Thread) system defined thread 
+                every thread is having service thread
+				To stop these service threads JVM will stop these after the termination 
+VOLATILE- the volatile keyword does not cache the value of the varibles in the cache memory. 
+           it will always read and write the variable
+Threadpooling ; thread pool resuse the already created thread to execute the current task or new task.
+                it offer the solution to the problem of thread life cycle overhead and resource thrashing.
+                types
+				1.FixedThreadPool(there will be fixed number of threads which will execute n number of task)
+				                  syntax ; ThreadPoolExecutor exec = (ThreadPoolExecutor)Executors.newFixedThreadPool(15)
+				2.SingleThreadPool : only one single thread will execute all the task
+				                  syntax : ThreadPoolExecutor exec = (ThreadPoolExecutor)Executors.newSingleThreadPool();
+				3.CachedThreadPool : it will first check in the cache is there any live thread which has no task allocated to it.
+				                      Then it will use that thread and execute the task.
+                                      If there is no live thread then it will create the new thread and assign the task to that threads.									  
+Executor Framework : it will create the Thread pool                      
+                      Executor(interface)
+					  1.executor service(interface)
+					  2.ThreadPoolExecutor(class)
+executors is class					  
+ReentrantLock - Java 1.5
+                Java.util.concurrent.locks.*;
+                 syntax :private Lock mylock=new ReentrantLock(); 
+                        private Condition sufficentBal = mylock.newCondition();
+                        mylock.lock();try{//code}
+						finally{          // bcoz if code wait() nobody will notify
+						mylock.unlock();}
+
+JDBC - java database connectivity
+-is a java API(Application Programming Interface)provides us in-build classes
+that is used to connect and execute the Query to the Database.
+
+jbdc Driver : is the program which helps us to communicate the java application with the database
+Drivers:
+1.jdbc-odbc Bridge Driver / type-1 ()
+2.Native-API Driver / type-2
+3.Network protocol Driver / type-3
+4.Thin Driver / type-4
+
+How to connect with DB
+1.register the Driver
+2.connection url
+3.statement(Query)
+4.execute the statement
+5.close the connection
+
+Class.forName("oracle.jdbc.driver.OracleDriver")
+jdbc:oracle:  thin    :  @localhost  :   1521    : orcl        ,username,password
+API   DB    Drivername DB is your sys  by default   DB name or
+                          name         port num is   scheme name
+						               1521.you can 
+									   change
+
+Statement stmt = cn.createStatement();
+Connection con = DriverManager.getConnection(url);
+PreparedStatement pstmt = con.PrepareStatement("insert into userdetail values(?,?)");(to execute dynamic or parametrized)
+pstmt.setstring(1,"neha");
+pstmt.setString(2,"nh");
+int i = pstmt.executeUpdate();
+S.o.p(record+"record inserted");
+con.close();
+
+after insert data in sql using query remember to do commit(permanently stores in DB)									   
+if we insert using java it will be automatically commit.
+
+CLOB - large data
+BLOB -  binary large data to store image
+       syntax :  FileInputStream fin = FileInputStream(photo url);
+                 stmt.setBinary(fin);
+
+                Blob blob = rs.getBlob(2,fin,fin.available);
+				byte barr[]=blob.getBytes(1,(int)blob.length());
+                FileOutputStream fos =  new FileOutputStream(url the photo to store);
+                fos.write(barr);
+                fos.close();
+Callable Statement: is used to call the stored procedures(procedure in sql)
+                    CallableStatement cstmt = con.prepareCall("{call callfromjava(?,?,?)}");
+
+java supports Call By Value 					
+	 not supports call by referance				
+
+WRAPPER CLASS java1.5
+Integer class
+Float class
+Double class
+Long class
+				
+MATH class          
+wrapping / auto boxing - int x= 10;
+primitive to object      Arr.add(x);
+					     internally(Integer in = new Integer(x);)
+						 
+Unwrapping / unboxing - //int y = in.intValue()
+ object to primitive     int i = (Integer) m.getKey();
+	                     int j = (Integer) m.getValue();
+ 
+COLLECTION java 1.2 : is the interface which is use to group up the objects.
+                      it contains objects
+collections - class
+              is framework(readymade architecture) that provides an architecture to store and manipulate the group of objects
+
+                iterable(interface)
+             collection	(interface)	
+ List(interface)                                 set(interface)                           
+ArrayList            queue(interface)     SortedSet(interface)       Hashset                  
+LinkedList          Dequeue(interface)    NavigableSet(interface)    LinkedHashSet           
+Vector            piorityQueue            TreeSet                                        
+Stack                                                                                   
+     
+Map	
+           HashMap 
+            LinkedHashMap
+SortedMap
+NavigableMap
+TreeMap
+
+List : will accept the duplicate elements and maintain the insertion order.
+
+ArrayList : is dynamic array also called as resizable
+            array can shrink and expand automatically when we will add or remove elements
+			  - ArrayList contains duplicate
+			  -ArrayList maintains the insertion order
+			  -ArrayList is not a synchronized class
+			  -ArrayList is good for sorting and accessign the elements
+			  -ArrayList manipulation is slow because lot of bit shifting is required when we adding and removing an elements
+			  -Random access
+Iterator itr = arr.iterator();
+while(itr.hasNext()){
+s.o.p(itr.next());}			  
+arr.addAll(arr1); concats two arrays
+to make ArrayList synchronized - Collections.sort(arr);
+                                 Collections.synchronizedList(arr);
+also CopyOnWriteArrayList() is synchronized ArrayList
+
+LinkedList - contains duplicates
+           - insertion order
+		   - is not synchronized
+		   - manipulaion is fast
+		   - implements queue and list so it has both properties
+		   
+VECTOR java 1.0 : is a legacy class 
+                  is a SYNCHRONIZED class	   
+                  maintain the duplicate element
+				  insertion order
+Vector<> vec = new Vector<>();
+vec.size(); - no of elements present(.size is in collection interface)				  
+Enumeration enumeration = vec.elements();
+while(enumeration.hasMoreElements()){
+s.o.p(enumeration.nextElement());}
+
+Stack : is the subclass of vector.
+
+while sorting if datatype is diff it will give typecasting exception
+
+Generics java5 : has a feature of type safety
+
+diff btw List and Set
+List mainitain duplicate and insertion order
+Set doesn't contain any duplicate and insertion is not maintained
+
+HashSet : no duplicate
+          insertion order is not going to maintain
+	HashSet<Interger> hs = new HashSet<>();
+    hs.add(282);
+
+LinkedHasSet : maintains order
+               no duplicate
+
+TreeSet : no duplicate
+          it will sorted in ascending order			   
+          by default it as sorting so it accepts only similar datatype
+	internal work : takes one value
+                    uses HashMap to store their object	
+					
+Queue : first in first out
+
+PriorityQueue : objects are processed by their priorities. 
+                doesn't allow null values to be stored in the queue.
+					
+Why Map is not under collection?
+Map uses key and value pair
+where as rest of the collection class uses only one value
+
+HashMap hmap = new HashMap<>(); //null is also taken as key
+//hmap.put(key,value);  if key is duplicate value will change as last given
+hmap.put(101,"aaa"); //value can be of any datatype
+hmap.put(null,"aaa");
+hmap.put(ab,"aaa");
+
+HashMap - it stores key and value  
+          not maintain insertion order
+		  duplicate key not allowed
+		  many null key is allowed
+		  not synchronized(can make synchronized by Collections.synchronizedMap(hmap);)
+default 16 buckets (initial value is threshold)	
+capacity is no of buckets consumed  
+by using key hashmap will calculate the hashcode
+index no is calculated using hashcode
+IndexNo:hashcode & n-1 = 12
+HashCollision : getting same bucket no after cal indexno 
+       then hashmap internally create linkedlist(doubly linkedlist) 
+
+LinkedHashMap : it is same as hashMap only the diff is it LInkedHashMap maintan the insertion order
+
+TreeMap : no null key are allowed
+          sort map in ascending order
+          TreeMap tmap = new TreeMap<>();
+          tmap.put("abc",123);
+		  tmap.put("12",345);//key should be similat type
+		  tmap.put();// null is not allowed
+
+HashTable  : legacy class
+             SYNCHRONIZED class
+			 doesn't allow null key and null value
+			 
+ConcurrentHashMap : is SYNCHRONIZED map(only one thread(locked thread) can read/write other can read only)
+                  ConcurrentHasMap divides the map into the segments and put the 
+				    lock on one segment not the whole map.
+				  Locking mechanism is known as segment locking or bucket locking
+                  No other thread can access the locked segment.But they can access
+				    the rest of the map and can only perform the read operation.
+
+concurrentModificationException - It is not permissible for a thread to modify a Collection 
+                                  when some other thread is iterating over it.
+
+under iteration					
+  fail Fast: while doing the iteration in collection if it throws the concurrentModificationException
+  Fail Safe: while doing any modification at the iteration time will not get any ConcurrentModificationException
+
+Comparable Vs Comparator
+Comparable : it provides a single sorting sequence
+             E can sort the object based on the single element 
+Comparator interface: it provides the multiple sorting sequence which means it will do the sorting based 
+                      on the multiple elements of the class.
+we have to override the compare(Object obj1,Object 2)
+
+ITERATION:
+
+Iterators are used to traverse through the Java collections.
+three types of iterators.
+      Enumeration − Enumeration is initial iterators introduced in jdk 1.0 and is only for older collections like vector or hashTables. Enumeration can be used for forward navigation only. Element can not be removed using Enumeration.
+      Iterator − Iterator is a universal iterator introduced in Jdk 1.2 and can be used for any collections. Iterator can be used for forward navigation only. Element can be removed using iterator if remove method is supported.
+      ListIterator − ListIterator is a iterator for List type collections and supports bidirectional navigation.
+
+
+HashCode and Equals of Object:	
+without overridng of hashcode and equals method of Object class:
+HashCode of Object class will return 	
+
+
+JAVA 8 :
+
+1.Lambda expression:
+Lambda expression provides implementation of functional interface. To provide the implementation of Functional interface. 
+FUNCTIONAL INTERFACE: An interface which has only one abstract method is called functional interface. 
+Java provides an anotation @FunctionalInterface, which is used to declare an interface as functional interface.
+
+Lambda expression types example:
+() -> {  
+//Body of no parameter lambda  
+}  
+
+(p1) -> {  
+//Body of single parameter lambda  
+}  
+
+(p1,p2) -> {  
+//Body of multiple parameter lambda  
+}  
+
+2.DEFAULT METHODS:
+Java provides a facility to create default methods inside the interface. 
+Methods which are defined inside the interface and tagged with default are known as default methods. 
+These methods are non-abstract methods.		  
+
+3.Functional Interface:
+An Interface that contains only one abstract method is known as functional interface. 
+It can have any number of default and static methods. It can also declare methods of object class.
+Functional interfaces are also known as Single Abstract Method Interfaces (SAM Interfaces).
+
+4.Method References:
+Method reference is used to refer method of functional interface. It is compact and easy form of lambda expression. 
+Each time when you are using lambda expression to just referring a method, you can replace your lambda expression with method reference.
+
+types of method references in java:
+Reference to a static method.
+Reference to an instance method.
+Reference to a constructor.
+
+
+What are the two ways to iterate the elements of a collection?
+What is the difference between ArrayList and LinkedList classes in collection framework?
+What is the difference between ArrayList and Vector classes in collection framework?
+What is the difference between HashSet and HashMap classes in collection framework?
+What is the difference between HashMap and Hashtable class?
+What is the difference between Iterator and Enumeration interface in collection framework?
+How can we sort the elements of an object? What is the difference between Comparable and Comparator interfaces?
+What does the hashcode() method? 
+         It returns the hash code number of the collection.
+What is hashcode?
+         hash code is an integer value that is associated with each object in Java.
+What is the difference between Java collection and Java collections?
+
+
+

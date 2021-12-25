@@ -1,0 +1,130 @@
+HL7 (Health Level 7) 7th layer of OSI layer
+helps in  Healthcare domain
+
+TOPICS
+1.message specification
+2.datatypes
+3.conformance
+
+HL7 is standard data format
+
+converting HL7(version x) to (version y) is tranformation
+
+observation - report of lab
+
+demographic - details of patient name , age, contact
+healthcare history -  
+practitioner information - 
+
+2 MODES OF COMMUNICATION
+1. batch processing (sends batch of patients details at sheduled time )
+2. real time (sends details of specific pathient when requested )
+
+hl7 international
+v2 > widely used (text format message carries data)
+v3 > stopped working on it (XML format) 
+CDA > (XML only capturing clinical data documents)
+FHIR > same as v2 (XML/ JSON/RDF)
+
+v2.8 > ER7 - Encoding Rules
+
+ADT
+A01 admission
+A02 transfer
+A03 discharge
+A04 register
+
+
+MSH -> segements 
+PID /
+message are made of segments
+segements are made of fields
+fields are made of components
+components > ^
+components are made of subcomponents
+subcomponent > &
+
+MSH|^~\&|
+first (^) components
+second(~) repetation
+third(\) escape character
+4th(&) subcomponents 
+<CR> segment terminator, carriage return
+| field seperator
+
+CARDIALNITY
+[] - 0..1
+{} - 1...*
+
+MSH - message header  1-field seperator 
+                      2-encoding character 
+					  3-sending app 
+					  4-sending facility 
+					  5-receiving app 
+					  6-receiving facility
+					  9-message type
+					  10-message control ID
+					  11-processing ID
+                      15-accept level(only in enhance mode) (Al-always,NE-never)
+					  16-application level(Al-always,NE-never)
+MSH - field 9 contains ACK1					  
+OBR - order
+PID - patient ID
+OBX - obervation
+NK1 - next
+IN1 - insurance
+NTE - notes and commands
+ZCV - user defined segment
+MSA - capture acknowledge  1-status of ACK code
+                            |AA| - application accepts(1.custody of message(basic validation) 2.process of message(all message are read))
+                            |AE| - application error
+							|AR| - application rejection(checks value)
+                           2-message code							
+ERR - error message
+
+
+120# - accepts truncation
+120= - truncation is not possible
+
+/s/ - component seperator
+/t/ - subcomponent seperator
+/p/ - truncation seperator
+
+2 MODE OF ACKNOWLEDGE
+1.original mode (default)sends single acknowledge(application level acknowledge)(AA,AE,AR)
+2.enhanced mode  configuration(sends two acknowledgement)1.accept level 2.process level(AA,AE)
+   (CA basic lvl for enhanced mode)
+   (CR message rejection)
+   (CE commit error checks correctness)
+
+HL7 defined - have ID (global) ADT|A04 we can't redefine or change the values
+User defined table - IS ZVC (F-female,M-male)
+Local tables - z segments new to HL7(having CWE datatype)
+external table - is a set of coded values defined by another organization
+imported tables -  published by HL7 but their content is not subject to approval by HL7
+
+ST(plain string data)
+TX(long text strings)
+FT(formatted text)
+NM(numbers)
+NA(numeric array)
+ED(waveform image)
+MA(Multiplexed array)waveform data
+MO(money)
+CP(component price)
+DT(date) YYYY[MM[DD]]
+TM(time)HH[MM[SS[.s[S[S[S
+DTM(datetime stamp)YYYY[MM[
+DR(date range)YYYY[MM.....^YYYY[MM[DD[HH..
+
+AD - address
+XAD - extended address
+XPN - extended person name
+XTN - extended telecommunications number
+CNE - coded with no exception(only code accepted)
+CWE - coded with exception(also accepts some text with code)
+
+
+
+
+

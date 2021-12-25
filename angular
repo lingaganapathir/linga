@@ -1,0 +1,33 @@
+What is the difference between directive and the component?
+Component is used to break up the application into smaller components.
+But Directive is used to design re-usable components, which is more 
+behavior-oriented. That is why components are widely used in later
+versions of Angular to make things easy and build a total component-based model.
+
+module : collection of components or components are grouped together to form module
+
+service: to pass values from component to component
+
+routing: things to do in routing module:
+         import { RouterModule, Routes } from '@angular/router';
+         const routes: Routes = [
+           { path: '',
+             redirectTo: '/login',
+             pathMatch: 'full' 
+            },
+            {
+              path: 'login',
+              component: LoginComponent
+            }
+         ];
+		 @NgModule({
+           imports: [RouterModule.forRoot(routes)],
+           exports: [RouterModule]
+         })
+		 
+ways to use it:
+  define this in constructor of that ts file: private router: Router
+  inside function: this.router.navigateByUrl('/list');
+  in <a> tag: <a routerLink="/login">click here to login.</a>
+  
+ngfor:

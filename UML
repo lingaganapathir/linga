@@ -1,0 +1,84 @@
+UML
+
+unified modelling language
+(diagram)
+DEF : If provides diff visual elements to graphically represent the structure of an application
+It help perform OOAD(object oriented analysis and design)
+
+principles of OOPS >
+classes
+object > states and behaviour
+inheritance > parent,child class
+abstraction > background process hidden
+encapsulation > information hiding
+polymorphism > 
+
+SOFTWARE DEVELOPMENT LIFECYCLE
+requirement ananlysis
+planning
+designing
+coding/development
+testing
+deployment
+maintenance
+
+types of UML diagram -> structured / static diagram
+                        > class diagram   
+					    > object diagrams
+					    >deployment diagram
+					    >package diagram
+					    >composite structure diagram
+					    >component diagram
+                     ->Dynamic / behavioural diagram
+					    >use case diagram > dynamic behaviour of your application
+						>activity diagram
+						>interaction diagram
+>use case diagram
+a use case diagram is used to represent the dynamic behaviour of a system.
+It encapsulate the system's functionality by incorporating use cases, actors and their relationship.
+The main purpose of ause case diagram is t protray the dynamic aspect of a system.
+
+use case diagrams(notation)
+oval shape (use-case)
+stickman (actor)
+relationship (include,extends relationship)
+
+>sequence diagram
+the sequence diagram represents the flow of messsage inthe system.
+It protrays the communication between anytwo lifeline as time-ordered sequence of events or messages
+
+>purpose
+To model high level interaction among objects within a system
+To model inteactionamong objects inside a collaboration realizing use cases
+
+>Activity diagram
+is used to demonstrate the flow of control with in the system rather than the implementations.
+It models the concurrent and sequentil activities.
+(It is also refered as an object-oriented flowchart)
+
+Activity > Notation
+Activity - rounded rectangle
+swinlane - rectangular box
+Fork
+Join
+Initial states
+Final states
+
+>class diagram
+class diagram depicts the static viewof the application.
+It represents the types of objects residing in the system and the relationship between then
+It is used to visualize ,describe and documents various different aspects of the system and also construct executable software code.
+
+class diagram > benefits
+It represents the object model for complex system
+It reduces the mintenance time by providing an overview of how an application is structed before coding
+It provides a general schematic of an application for better understnading
+It represents a detailed chart by hignighting the desired code, which is to be programmed
+It is helpful for the stakeholders and the developers
+ public > +
+ private > -
+ protected > #
+
+
+
+
