@@ -1,0 +1,76 @@
+Azure Developer:
+
+coud based platform
+
+pre-requisite:
+-programming background
+-.Net/java
+-web application development
+
+softwares:
+-VS 2017/2019
+-VS code
+-local admin rights
+
+Azure Subscription:
+-azure free trail for 1 year email,credit card,phonenum
+
+what is cloud computing?
+renting resources.
+you only pay for what you use.
+company which provides these are cloud provider.
+cloud provider are responsible for physical hardware.
+
+benefits of cloud coumputing:
+  cost effective
+  scalable(increase or decrease resources RAM vertically or horizontally)
+  elastic(spike or drop in workload demand automatically)
+  current(maintaining the software and hardware setup upto date upgrades and setups)
+  reliable(cloup provider will take care of our data like backup)
+  global(usable all over even out of country)
+  secured(physical and digital security)
+  
+strategies of cloud computing
+  SaaS(software as a service) 
+       software via internet (MS word in internet without installing) ex:-office365,drop box
+  Iaas(infrastructure as a service)
+       coumputing(VM),storage, memory, network...
+  Paas(platform as a service)  (internally contains IaaS)
+       provides an environment for building, testing, and deploying software applications
+	   goal is to help in creating an application quickly without managing the underlying infra
+       hosting environment, runtime, development, testing, OS
+	   
+Azure Resource Manager(ARM)
+  is th edeployment and management service for azure
+  provides a management layer that enables to create, update resource in azure subscription(PM should approve to use VM)
+  we can apply tag(name) to resources 
+  
+Azure Resource Group(ARG):
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

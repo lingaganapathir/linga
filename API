@@ -1,0 +1,37 @@
+success - true/false
+
+message - user frndly msg
+
+metadata - lang specific 
+           user in session
+		   total
+		   page
+
+trim all inputs white spaces in start and end
+     in header, query param, path param 
+
+don't print sensitive msg in service and factory
+
+don't deviate from requirement
+
+use non-primitive datatypes in api restcontorller
+
+return type should be factoryresponse
+
+contoller will pass all data from  to responsefactory	
+
+facade layer will jhave business logics
+
+projectfacade.newproject()  may nvoke multi services
+  prjtvalidationservice
+  prjtpermissionservice
+  prjtdatabaseservice
+  prjtmapperservice
+  prjtauditservice - can access auditrepo
+  
+facade will DTO
+
+
+
+
+ 

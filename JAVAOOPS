@@ -1,0 +1,39 @@
+OOPS
+
+day-1
+
+JAVA - Java is a Robust Language.
+CLASS- noun
+method- verb
+interface- adjuctive
+
+constructor-used to initialize object
+constructor chaining
+super()
+polymorphism
+method overloading/overriding
+Covariant
+inheritance
+day-2
+
+UPCASTING ->  Animal animal = new Cat();
+DOWNCASTING -> Cat cat = (Cat) animal;
+INTERFACE -> object can't be created
+          -> method cant't have definition only declaration
+class extends class , class implements interface , interface extends interface
+ABSTRACT -> class can't be instantiate
+final keyword ->class-> not supports subclass
+      ->variable-> not be reinitialised,should be initialized while declaring or initialize in constructor
+	  ->method-> can't be overridden
+encapsulation -> get,set
+object() class
+mutable
+immutable
+static keyword	  
+cohesion -> high cohesion -> restricted task,good software design(seperate class for each job)
+         -> low cohesion -> worst case of design ,have lot of task
+coupling->tighly coupled -> have more dependence
+        -> loosly coupled -> have less dependence
+single responsibility principles -> one class should have one and only responsibility
+open close principle -> open for extension and close for modification
+ 		

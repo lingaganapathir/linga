@@ -1,0 +1,202 @@
+HIBERNATE
+maven-mvnrepository.com
+
+An ORM tool(object relationship mapping)
+used in the data layer of application
+implements JPA
+
+JPA gives specification(functionality,standard) to ORM tool
+JPA is in javax.persistence package
+
+problem in JDBC: 
+-mapping member variables to column
+-mapping relationship
+-handling Data types:Boolean is not possible to store in database. so either we need to make char or any other datatype.
+-managing the change of the state of the object
+
+frameworks - have lot of class and API(in jar files)
+
+MAVEN : automatic build and deployment tool
+
+jar(java) = dependencies(hibernate) tag
+importing         pom.xml
+
+we add all jar files in dependencies
+-it will download jar file (from central repository) we need in project
+and skips remaining files in first time and saves in system.
+-In second time it will take from system.
+
+groupId - package name or ID of the project group
+artifactId - name of the project/jar file name
+version - version of the project
+
+repository(folder or directory where all the project jars, library jar, plugin or any other project specific artifacts are stored)
+3 Maven repository
+1. local repository
+      Maven local repository is a folder location of your machine. It gets created when you run any maven project for first time.
+      %M2_Home%
+	  %User_Home%	  
+2. central repository
+       Maven Central repository is repository provide by Maven Community.
+	   it contais a large number of commonly used libraries.
+3. remote repository - is a place which developer's has created its own custome repository containing requiredlib, jars or other project artifacts or jars. which will be not available on central repository.
+       Maven does not find a mentioned dependency in the central repository as well then it stopped build your process.
+
+POM.xml (Project Object Model)
+  It is fundamental unit of work in maven. It is the xml file which resides in the base directory of the project.
+  Pom file holds all the project related information and project related configuration details.
+
+Dependency consists of : GAV
+Scope : compile,test,provide(default=compile),run
+Type: jar,pom,war,ear,zip(default=jar)
+
+TRANSITIVE DEPENDENCY : a dependency that should be included when declaring project itself
+
+Transitive Dependencies are controlled using:
+  - Exclusions - exclude specific jar files that are not needed
+  - Optional declarition
+
+
+Maven Life Cycle :
+-Prepare-resouce: resource copying from the particular repository and we can customized in this phase.
+-Compile: resource compilation, source code compilation is done in this phase.
+-Package or Packaging: in this phase will create the jar/war/ear package as mentioned in packaging in pom.xml
+-install or installation : this phase install the package in the local/remote maven repository
+
+Connecting to Database using JDBC:
+-jdbc DB configuration
+   Driver register
+   connection
+   statements
+   execute query
+   driver jar file required
+-class object or ModelObject
+-Then we have to create the method and create the model object
+-Design the database, create the table
+-write the SQl query to save the data
+
+Connecting Db using HIBERNATE
+-Hibernate configuration(hibernate-cfg.xml)
+-The Model Object
+-service method to create the model object
+-No database design
+-No sql queries
+
+connection driver = connection for mssql
+connection.url = connection url in jdbc
+dialect(is a language) = say what DB we are using(org.hibernate.dialect.MySQLDialect)
+show_sql - returns the sql result
+
+sessionfactory in hibernate.cfg.xml will containing
+-driver name
+-url,usname,paswd
+-dialect
+-entity class
+
+@Id for primary key
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+@Table(name="user",nullable=false,unique=true)-to change table name
+@Column (name="Name", length=30, nullable=true)-to change column name
+@Transient  // using transient annotation hibernate will now save this salary column in DB
+@Temporal(TemporalType.Date) //returns date
+@Lob  //change datatype to longtext
+@Embeddable //table embedding
+@Embedded // table embedded 
+@AttributeOverrides({
+@AttributeOverride(name="city",column=@Column(name="PermanentCity"))
+@AttributeOverride(name="state",column=@Column(name="PermanentState"))
+})
+@ElementCollection //to add collections
+@JoinTable(name="",joinColumns=@JoinColumn(name="")) //to join two tables
+@GenericGenerator(name="hilo-gen",strategy="hilo")
+@CollectionId(columns={@Column(name="Address_id")},generator="hilo-gen",type=@Type(type=))
+
+session.save(user);//user is a class object to fetch object
+usr=null;
+user = (User)session.get((User.class), primary key);
+s.o.p(user.getUserName());
+
+ASSOCIATION IN HIBERNATE(HAS A relationship)
+-embedded where hibernate created the user table with all the details of address
+-when two object of the same class that time we use @AttributeOverrides to override the name of the columns of table
+-when set of address (collection of address object)is there
+-we use @ElementCollection and also we can provide the name of the JoinTable and JoinColumn by using the @JoinTable and @JoinColumn
+here hibernate by default create the join table with any name and join column with any name.so using @JoinTableand @JoinColumn we will tell hibernate to take the name which we specified
+
+JPA is the specification. it gives common functionality and prototype to ORM tools. 
+All ORM tools(hibernate) follow the common standards, by executing the same specification.
+if we need to switch our application from one ORM tool to another then we can easily do it.
+
+in short: the major diff btw 
+
+Fetching data from DB
+Lazy loading - fetches one by one only if needed will load when we explicitly call getter or size method
+Eager loading - it is a design pattern is used in which data loading occur on spot 
+
+Mapping in hibernate
+one to one
+one to many
+many to many
+
+
+Inheritance
+descriminated type
+
+transient state  -  object  
+persistence(managed) state - saved in DB and session
+detached state - detach from session close(),evict(),clear()
+removed state
+
+HQL:
+is mainly used to perform the bulk operations in hibernate
+-HQL
+-hibernate criteria API
+-Native SQl
+
+HQL:
+-HQL is the hibernate's own language
+-HQL is a database independent language
+
+
+
+
+
+
+
+SEQUENCE                                                                   
+create table firstseq 
+(
+int hum auto_increment
+);
+
+
+meaning - sleep mode
+
+INSERT-save(returns PK)|
+      -persist(void)   |
+      -saveOrUpdate(void)|-need transaction
+UPDATE-update          |
+      -merge           |
+DELETE-delete          |
+
+SELECT-get
+      -load
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
