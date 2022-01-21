@@ -37,6 +37,13 @@ enterprise edition - web application
 JCL > java class library(standard API(library))
 java EE was created to extend java SE
 
+Nameing convention:
+package: lowercase
+Class: UpperCamelCase
+method/variable: lowerUpperCase
+constant: UPPERCASE
+snake_case
+
 datatype -attributes assigned to specific variable (tells the compiler how the programmer aims to use the data )
 
 statically typed language - defined during compile time.
@@ -102,6 +109,10 @@ default d;}
 class B ex A1{
 can access b,c,d
 }      
+
+class E{
+can access b,c,d
+}
 
 package B
 class c{
